@@ -1,10 +1,15 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import HeaderTheme from '../themes/navTheme';
+import DropDownNavMenu from '../themes/dropDownNavMenu';
 
-
+// 
 export default function Header() {
+  const [toggle, setToggle] = React.useState(false);
   return (
-    <HeaderTheme/>
+    <>
+      <HeaderTheme toggle={toggle} setToggle={setToggle}/>
+      <DropDownNavMenu toggle={toggle}/>    
+    </>
+
   );
 }

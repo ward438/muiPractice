@@ -20,10 +20,12 @@ const theme = createTheme({
   },
 });
 
-export default function HeaderTheme() {
+interface MenuToggleProps {
+  toggle: boolean;
+  setToggle: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  const [toggle, setToggle] = React.useState(false);
-
+export default function HeaderTheme({toggle, setToggle}: MenuToggleProps) {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{  
@@ -38,12 +40,9 @@ export default function HeaderTheme() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'white', // Make text visible
+        color: 'white',
         fontWeight: 'bold',
-        fontFamily: 'Roboto, Arial, sans-serif', // Ensure local component uses it
-        '&:hover': {
-          bgcolor: 'primary.dark',
-        }
+        fontFamily: 'Roboto'  
       }}
       >
          <MenuToggle toggle={toggle} setToggle={setToggle}/>
