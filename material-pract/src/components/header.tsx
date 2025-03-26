@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <>
       <HeaderTheme toggle={toggle} setToggle={setToggle}/>
-      <DropDownNavMenu toggle={toggle}/>    
+      <DropDownNavMenu toggle={toggle} setToggle={setToggle}/>    
     </>
 
   );

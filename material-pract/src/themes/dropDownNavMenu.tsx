@@ -1,14 +1,8 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
-
-interface MenuToggleProps {
-  toggle: boolean;  
-}
+import { MenuToggleProps } from '../assets/interfaces';
 
 export default function DropDownNavMenu({ toggle }: MenuToggleProps) {
-// complete ternary to complete animation when menu is closed
   return (
     <>
       {toggle ? (
@@ -25,39 +19,45 @@ export default function DropDownNavMenu({ toggle }: MenuToggleProps) {
         >
             {!toggle ? 
             
-                (<Box className="lift-up-nav"/>)             
+                (<Box/>)             
                 :            
-                (<Box> 
-                    <Box
-                        component="form"                                     
-                        sx={{ 
-                            '& > :not(style)': { m: 1, width: '25ch' },
-                            paddingTop: '.2em',
-                            boxShadow: '0px 1.75px 4px 0px black'
-                        }}
-                        noValidate
-                        autoComplete="off"
-                        >
-                        <TextField 
-                            id="user-login"
-                            label="User Name" 
-                            variant="outlined"
-                            sx={{
-                                backgroundColor: 'white',
-                                borderRadius: '5px'
-                            }}
-                        /> 
-                        <TextField 
-                            id="user-login"
-                            label="Password" 
-                            variant="outlined"
-                            sx={{
-                                backgroundColor: 'white',
-                                borderRadius: '5px'
-                            }}
-                    />      
-                    </Box>
-                </Box>)}           
+                (
+                  <Box
+                    component="form"                                     
+                    sx={{ 
+                      '& > :not(style)': { m: 1, width: '25ch' },
+                      paddingTop: '.2em',
+                      boxShadow: '0px 1.75px 4px 0px black'
+                    }}
+                    noValidate
+                    autoComplete="off"
+                    >
+                    <TextField 
+                        id="user-login"
+                        label="User Name" 
+                        variant="outlined"
+                        sx={{backgroundColor: 'white', borderRadius: '5px'}}
+                      /> 
+                    <TextField 
+                        id="user-login"
+                        label="Password" 
+                        variant="outlined"
+                        sx={{backgroundColor: 'white',borderRadius: '5px'}}
+                      /> 
+                    <Box className="container">
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                      <Box className="line"/>
+                    </Box>         
+                  </Box>
+                )}           
         </Box>
       ) : null}
     </>
